@@ -11,6 +11,6 @@ public class BoardMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.localPosition = new Vector3 (0, -TimeManager.time * 100, 0);
+		this.transform.localPosition = new Vector3 (0, - (TimeManager.time * 100), 0);
 	}
 }

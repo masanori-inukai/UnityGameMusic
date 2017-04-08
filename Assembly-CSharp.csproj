@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BoardMove.cs" />
+     <Compile Include="Assets\ScoreCreater.cs" />
      <Compile Include="Assets\ScoreHandler.cs" />
      <Compile Include="Assets\TimeManager.cs" />
  <Reference Include="UnityEngine.UI">
