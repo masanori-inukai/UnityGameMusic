@@ -7,6 +7,7 @@ public class ScoreHandler : MonoBehaviour {
 	public GameObject touchEffectPrefub;
 	public GameObject pointTextPrefub;
 	public PointHandler pointHandler;
+	public GageHandler gageHandler;
 
 	// 各ポイント評価用のテキストスプライト
 	public Sprite[] textSprite;
@@ -22,6 +23,7 @@ public class ScoreHandler : MonoBehaviour {
 		Invoke ("AutoDestroy", (60f * tick) / (TimeManager.tempo * 480f));
 
 		this.pointHandler = FindObjectOfType<PointHandler> ();
+		this.gageHandler = FindObjectOfType<GageHandler> ();
 	}
 	
 	// Update is called once per frame
@@ -68,6 +70,8 @@ public class ScoreHandler : MonoBehaviour {
 			this.showText (distancePoint);
 
 			this.pointHandler.setPoint (GameData.score);
+
+			this.gageHandler.setGage (GameData.gagePoint);
 		}
 	}
 
@@ -102,5 +106,9 @@ public class ScoreHandler : MonoBehaviour {
 	public void AutoDestroy() {
 		Destroy (this.gameObject);
 		this.showText( 0 );
+
+		GameData.gagePoint -= 2;
+		if (GameData.gagePoint < 0) GameData.gagePoint = 0;
+		this.gageHandler.setGage (GameData.gagePoint);
 	}
 }
