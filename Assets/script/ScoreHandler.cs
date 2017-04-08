@@ -6,6 +6,7 @@ public class ScoreHandler : MonoBehaviour {
 
 	public GameObject touchEffectPrefub;
 	public GameObject pointTextPrefub;
+	public PointHandler pointHandler;
 
 	// 各ポイント評価用のテキストスプライト
 	public Sprite[] textSprite;
@@ -19,6 +20,8 @@ public class ScoreHandler : MonoBehaviour {
 	void Start () {
 		int tick = 3100;
 		Invoke ("AutoDestroy", (60f * tick) / (TimeManager.tempo * 480f));
+
+		this.pointHandler = FindObjectOfType<PointHandler> ();
 	}
 	
 	// Update is called once per frame
@@ -52,7 +55,7 @@ public class ScoreHandler : MonoBehaviour {
 		if (GameData.gagePoint > 100) GameData.gagePoint = 100;
 
 		// ポイントを確認
-		Debug.Log( GameData.score );
+//		Debug.Log( GameData.score );
 
 		// ポイントが0の時は削除しない。あんまり早く押せてもあれなので
 		if (distancePoint > 0) {
@@ -63,6 +66,8 @@ public class ScoreHandler : MonoBehaviour {
 			obj.GetComponent<Animator> ().Play (0);
 
 			this.showText (distancePoint);
+
+			this.pointHandler.setPoint (GameData.score);
 		}
 	}
 

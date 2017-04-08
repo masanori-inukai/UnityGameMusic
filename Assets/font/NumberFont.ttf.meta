@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: dd3b3efcc29bf4c2fa0c75a794a6380e
+timeCreated: 1491654314
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: icomoon
+  fontNames:
+  - icomoon
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
