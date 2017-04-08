@@ -5,6 +5,15 @@ using UnityEngine;
 public class ScoreHandler : MonoBehaviour {
 
 	public GameObject touchEffectPrefub;
+	public GameObject pointTextPrefub;
+
+	// 各ポイント評価用のテキストスプライト
+	public Sprite[] textSprite;
+
+	// 各ポイントのスプライト用変数
+	public enum PointTextKey {
+		Miss, Bad, Good, Great, Perfect
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -52,10 +61,41 @@ public class ScoreHandler : MonoBehaviour {
 			obj.transform.position = this.transform.position;
 			obj.transform.localScale = Vector3.zero;
 			obj.GetComponent<Animator> ().Play (0);
+
+			this.showText (distancePoint);
 		}
+	}
+
+	// 評価用テキスト作成
+	private void showText( float point ){
+
+		// エフェクトオブジェクトを生成
+		GameObject pointObject = Instantiate( this.pointTextPrefub );
+
+		// エフェクトの位置の移動とサイズをリセット
+		pointObject.transform.position   = transform.position + new Vector3( 0, 1f, 0 );
+		pointObject.transform.localScale = Vector3.one;
+
+		// ポイントに応じて画像を入替え
+		if( point > 0.8f )
+			pointObject.GetComponentInChildren<SpriteRenderer>().sprite = textSprite[(int)PointTextKey.Perfect];
+		else if( point > 0.6f )
+			pointObject.GetComponentInChildren<SpriteRenderer>().sprite = textSprite[(int)PointTextKey.Great];
+		else if( point > 0.4f )
+			pointObject.GetComponentInChildren<SpriteRenderer>().sprite = textSprite[(int)PointTextKey.Great];
+		else if( point > 0.2f )
+			pointObject.GetComponentInChildren<SpriteRenderer>().sprite = textSprite[(int)PointTextKey.Good];
+		else if( point > 0 )
+			pointObject.GetComponentInChildren<SpriteRenderer>().sprite = textSprite[(int)PointTextKey.Bad];
+		else
+			pointObject.GetComponentInChildren<SpriteRenderer>().sprite = textSprite[(int)PointTextKey.Miss];
+
+		// アニメーションを開始 //
+		pointObject.GetComponentInChildren<Animator>().Play( 0 );
 	}
 
 	public void AutoDestroy() {
 		Destroy (this.gameObject);
+		this.showText( 0 );
 	}
 }
