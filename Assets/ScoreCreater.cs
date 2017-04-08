@@ -73,7 +73,7 @@ public class ScoreCreater : MonoBehaviour {
 				scoreObject.transform.localPosition = new Vector3(x, y, 0);
 
 				// 譜面のスケールをリセット
-				scoreObject.transform.localScale = new Vector3 (1, 1, 1);
+				scoreObject.transform.localScale = Vector3.one;
 
 				// 出現したものの表示順を最奥に設定
 				scoreObject.transform.SetAsFirstSibling();
