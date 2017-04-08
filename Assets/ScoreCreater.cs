@@ -26,9 +26,13 @@ public class ScoreCreater : MonoBehaviour {
 
 			int index = Random.Range (0, ScoreCreater.ScorePositionXList.Length);
 			float x = ScoreCreater.ScorePositionXList [index];
+
 			obj.transform.localPosition = new Vector3 (x, TimeManager.time * 100 + 500, 0);
 
 			obj.transform.localScale = new Vector3 (1, 1, 1);
+
+			obj.transform.SetAsFirstSibling ();
+
 			this.timer = TimeManager.time + 1f;
 		}
 
