@@ -11,7 +11,8 @@ public class ScoreHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		// タッチの優先順位を変更する
+		this.transform.SetSiblingIndex ((int)this.transform.localPosition.y);
 	}
 
 	// ゲームオブジェクトを削除する
