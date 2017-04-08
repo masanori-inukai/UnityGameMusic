@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardMove : MonoBehaviour {
+public class TimeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-			
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.localPosition = new Vector3 (0, -TimeManager.time * 100, 0);
+		
 	}
 }
