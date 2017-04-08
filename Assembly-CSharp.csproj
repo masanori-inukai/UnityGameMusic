@@ -46,15 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AudioManager.cs" />
-     <Compile Include="Assets\AutoDestroy.cs" />
-     <Compile Include="Assets\BoardMove.cs" />
-     <Compile Include="Assets\GameData.cs" />
-     <Compile Include="Assets\MiniJSON.cs" />
-     <Compile Include="Assets\MusicData.cs" />
-     <Compile Include="Assets\ScoreCreater.cs" />
-     <Compile Include="Assets\ScoreHandler.cs" />
-     <Compile Include="Assets\TimeManager.cs" />
+     <Compile Include="Assets\script\AudioManager.cs" />
+     <Compile Include="Assets\script\AutoDestroy.cs" />
+     <Compile Include="Assets\script\BoardMove.cs" />
+     <Compile Include="Assets\script\GameData.cs" />
+     <Compile Include="Assets\script\MiniJSON.cs" />
+     <Compile Include="Assets\script\MusicData.cs" />
+     <Compile Include="Assets\script\ScoreCreater.cs" />
+     <Compile Include="Assets\script\ScoreHandler.cs" />
+     <Compile Include="Assets\script\TimeManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

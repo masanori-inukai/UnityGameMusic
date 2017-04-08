@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3be4a76879ceb4e619afa187ad034c65
-timeCreated: 1491633363
+guid: bd2a715a73d4f442992c8154bbdb9c95
+timeCreated: 1491651234
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -78,7 +78,7 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-  spritePackingTag: MainImage
+  spritePackingTag: point
   userData: 
   assetBundleName: 
   assetBundleVariant: 
