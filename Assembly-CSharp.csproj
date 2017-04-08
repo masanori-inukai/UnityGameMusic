@@ -46,10 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GageHandler.cs" />
      <Compile Include="Assets\script\AudioManager.cs" />
      <Compile Include="Assets\script\AutoDestroy.cs" />
      <Compile Include="Assets\script\BoardMove.cs" />
+     <Compile Include="Assets\script\GageHandler.cs" />
      <Compile Include="Assets\script\GameData.cs" />
      <Compile Include="Assets\script\MiniJSON.cs" />
      <Compile Include="Assets\script\MusicData.cs" />

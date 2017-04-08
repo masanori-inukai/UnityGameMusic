@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3ae1be142e5ce4bfaa7a2e0aa524e10c
-timeCreated: 1491657634
+guid: 0ea88101ddcb341d39948eaa1b0748f1
+timeCreated: 1491659137
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -39,7 +39,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 3, y: 0, z: 3, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -78,7 +78,7 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-  spritePackingTag: main
+  spritePackingTag: gameOver
   userData: 
   assetBundleName: 
   assetBundleVariant: 
