@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\AutoDestroy.cs" />
      <Compile Include="Assets\BoardMove.cs" />
      <Compile Include="Assets\MiniJSON.cs" />

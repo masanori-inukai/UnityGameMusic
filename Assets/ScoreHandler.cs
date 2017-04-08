@@ -8,7 +8,8 @@ public class ScoreHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		int tick = 3100;
+		Invoke ("AutoDestroy", (60 * tick) / (TimeManager.tempo * 480f));
 	}
 	
 	// Update is called once per frame
@@ -26,5 +27,9 @@ public class ScoreHandler : MonoBehaviour {
 
 		obj.GetComponent<Animator> ().Play (0);
 
+	}
+
+	public void AutoDestroy() {
+		Destroy (this.gameObject);
 	}
 }
