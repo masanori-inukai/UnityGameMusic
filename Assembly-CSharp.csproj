@@ -49,6 +49,7 @@
      <Compile Include="Assets\AutoDestroy.cs" />
      <Compile Include="Assets\BoardMove.cs" />
      <Compile Include="Assets\MiniJSON.cs" />
+     <Compile Include="Assets\MusicData.cs" />
      <Compile Include="Assets\ScoreCreater.cs" />
      <Compile Include="Assets\ScoreHandler.cs" />
      <Compile Include="Assets\TimeManager.cs" />
