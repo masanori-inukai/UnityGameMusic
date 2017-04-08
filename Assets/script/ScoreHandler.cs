@@ -8,6 +8,7 @@ public class ScoreHandler : MonoBehaviour {
 	public GameObject pointTextPrefub;
 	public PointHandler pointHandler;
 	public GageHandler gageHandler;
+	public GameObject touchBar;
 
 	// 各ポイント評価用のテキストスプライト
 	public Sprite[] textSprite;
@@ -19,7 +20,7 @@ public class ScoreHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		int tick = 3100;
+		int tick = 2500 + 200;
 		Invoke ("AutoDestroy", (60f * tick) / (TimeManager.tempo * 480f));
 
 		this.pointHandler = FindObjectOfType<PointHandler> ();
@@ -39,7 +40,7 @@ public class ScoreHandler : MonoBehaviour {
 			GetComponentInParent<BoardMove>().transform.localPosition + this.transform.localPosition;
 
 		// 距離を計算
-		int Distance = (int) Mathf.Abs( PositionInGame.y - ( - 350 ) );
+		int Distance = (int) Mathf.Abs( PositionInGame.y - ( - 300 ) );
 
 		// ポイントを計算し正規化
 		float distancePoint = ( 100 - Distance ) / 100f;
@@ -63,7 +64,7 @@ public class ScoreHandler : MonoBehaviour {
 		if (distancePoint > 0) {
 			Destroy (this.gameObject);
 			GameObject obj = Instantiate (this.touchEffectPrefub);
-			obj.transform.position = this.transform.position;
+			obj.transform.position = this.touchBar.transform.position;
 			obj.transform.localScale = Vector3.zero;
 			obj.GetComponent<Animator> ().Play (0);
 
@@ -82,7 +83,7 @@ public class ScoreHandler : MonoBehaviour {
 		GameObject pointObject = Instantiate( this.pointTextPrefub );
 
 		// エフェクトの位置の移動とサイズをリセット
-		pointObject.transform.position   = transform.position + new Vector3( 0, 1f, 0 );
+		pointObject.transform.position   = this.touchBar.transform.position + new Vector3( 0, 1f, 0 );
 		pointObject.transform.localScale = Vector3.one;
 
 		// ポイントに応じて画像を入替え
@@ -106,7 +107,9 @@ public class ScoreHandler : MonoBehaviour {
 	public void AutoDestroy() {
 		Destroy (this.gameObject);
 		this.showText( 0 );
-
+		FindObjectOfType<AudioManager> ().GetComponent<AudioSource> ().PlayOneShot (
+			FindObjectOfType<AudioManager> ().onMiss
+		);
 		GameData.gagePoint -= 2;
 		if (GameData.gagePoint < 0) GameData.gagePoint = 0;
 		this.gageHandler.setGage (GameData.gagePoint);

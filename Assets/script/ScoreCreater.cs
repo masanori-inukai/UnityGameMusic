@@ -14,6 +14,8 @@ public class ScoreCreater : MonoBehaviour {
 	// 音楽データを格納する構造体の配列
 	public List<MusicData> scoreData;
 
+	public GameObject[] touchBars;
+
 	// スコアのXの位置 //
 	private static float[] ScorePositionXList = new float[]{
 		-480, -160, 160, 480
@@ -67,10 +69,12 @@ public class ScoreCreater : MonoBehaviour {
 				float x  = ScoreCreater.ScorePositionXList[rand];
 
 				// 譜面のYの位置を決定
-				float y  = tmp.tick * 0.5f + 1000; 
+				float y  = tmp.tick * 0.5f + 950; 
 
 				// 譜面の位置を移動
 				scoreObject.transform.localPosition = new Vector3(x, y, 0);
+
+				scoreObject.GetComponent<ScoreHandler> ().touchBar = this.touchBars [rand];
 
 				// 譜面のスケールをリセット
 				scoreObject.transform.localScale = Vector3.one;
