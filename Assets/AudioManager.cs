@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.gameObject.GetComponent<AudioSource> ().PlayDelayed (2.475f);
+		this.gameObject.GetComponent<AudioSource> ().PlayDelayed (2.48f);
 	}
 	
 	// Update is called once per frame
