@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/BoardMove.unity
+- path: Assets/MusicGame.unity
   isLoaded: 1
   isActive: 1
