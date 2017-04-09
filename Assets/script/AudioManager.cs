@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.gameObject.GetComponent<AudioSource> ().PlayDelayed (2.3f);
+		this.gameObject.GetComponent<AudioSource> ().PlayDelayed (2.4f);
 //		this.gameObject.GetComponent<AudioSource> ().time = this.gameObject.GetComponent<AudioSource> ().clip.length - 1f;
 	}
 	
