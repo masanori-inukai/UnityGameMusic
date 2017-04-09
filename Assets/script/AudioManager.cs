@@ -7,13 +7,14 @@ public class AudioManager : MonoBehaviour {
 	public GameObject gameClear;
 	public GameObject gameOver;
 
+	public AudioClip onClick;
 	public AudioClip onMiss;
 	public AudioClip onGameOver;
 	public AudioClip onGameClear;
 
 	// Use this for initialization
 	void Start () {
-		this.gameObject.GetComponent<AudioSource> ().PlayDelayed (2.35f);
+		this.gameObject.GetComponent<AudioSource> ().PlayDelayed (2.3f);
 //		this.gameObject.GetComponent<AudioSource> ().time = this.gameObject.GetComponent<AudioSource> ().clip.length - 1f;
 	}
 	

@@ -102,6 +102,10 @@ public class ScoreHandler : MonoBehaviour {
 
 		// アニメーションを開始 //
 		pointObject.GetComponentInChildren<Animator>().Play( 0 );
+
+		FindObjectOfType<AudioManager> ().GetComponent<AudioSource> ().PlayOneShot (
+			FindObjectOfType<AudioManager> ().onClick
+		);
 	}
 
 	public void AutoDestroy() {
