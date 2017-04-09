@@ -57,11 +57,12 @@ public class ScoreHandler : MonoBehaviour {
 		// ゲージを制限
 		if (GameData.gagePoint > 100) GameData.gagePoint = 100;
 
-		// ポイントを確認
-//		Debug.Log( GameData.score );
-
 		// ポイントが0の時は削除しない。あんまり早く押せてもあれなので
 		if (distancePoint > 0) {
+
+			// TouchBarをアニメーション
+			this.touchBar.GetComponent<Animator>().SetTrigger( "Touch" );
+
 			FindObjectOfType<AudioManager> ().GetComponent<AudioSource> ().PlayOneShot (
 				FindObjectOfType<AudioManager> ().onClick
 			);
