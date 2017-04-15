@@ -63,9 +63,10 @@ public class ScoreHandler : MonoBehaviour {
 			// TouchBarをアニメーション
 			this.touchBar.GetComponent<Animator>().SetTrigger( "Touch" );
 
-			FindObjectOfType<AudioManager> ().GetComponent<AudioSource> ().PlayOneShot (
-				FindObjectOfType<AudioManager> ().onClick
-			);
+			// ミス以外は音を鳴らさないように
+//			FindObjectOfType<AudioManager> ().GetComponent<AudioSource> ().PlayOneShot (
+//				FindObjectOfType<AudioManager> ().onClick
+//			);
 
 			Destroy (this.gameObject);
 			GameObject obj = Instantiate (this.touchEffectPrefub);
